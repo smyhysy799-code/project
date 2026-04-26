@@ -1,12 +1,12 @@
 body {
-    font-family: "Tahoma", sans-serif;
-    background: #5874b4;
+    font-family: "Arial", sans-serif;
+    background:radial-gradient(circle at top right, #1e3a8a, #0f172a 70%);
     margin: 0;
-    padding: 0;
+    color: white;
 }
 
 header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: radial-gradient(circle, #6366f1);
     color: white;
     padding: 20px;
     text-align: center;
@@ -14,45 +14,89 @@ header {
 
 .courses {
     display: flex;
-    justify-content: center;
     gap: 20px;
-    padding: 30px;
-    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: center;
+    
 }
 
-.header-image-container img {
-  width: 100%;
-  height: 200px;
- object-fit: cover;
-display: block;
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+.hero-image {
+    width: 400px;
+    filter: drop-shadow(0 0 30px #6366f1);
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #6366f1, transparent);
+    right: -100px;
+    filter: blur(120px);
+    z-index: 0;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+h1 span {
+    background: linear-gradient(90eg, #22c55e, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+color: transparent;
+}
+p {
+    font-size: 18px;
+   opacity: 0.7;
+}
 .course-card {
     flex: 1;
-    max-width:300px;
-    background: linear-gradient(145deg, #1e293b,#506fb6);
-    
+    max-width:200px;
+    background: #1e293b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
     text-align: center;
 }
 
 .course-card img {
-    width: 100%;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: linear-gradient(90deg, #22c55e, #06b6d4);
-    color: rgba(255, 255, 255, 0.884);
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #6366f1, #06b6d4);
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(99,102,241,0.5);
 }
-
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(6,182,212,0.8);
+}
 .course-details {
     display: flex;
     gap: 30px;
